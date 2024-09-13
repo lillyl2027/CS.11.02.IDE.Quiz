@@ -9,8 +9,10 @@ public class Main {
      * Method signature: circleArea(int)
      * Returns the area of a circle. */
     public static double circleArea(int radius) {
-        return 0;
+        return (Math.round(Math.PI*radius*radius*100)/100.00);
+
     }
+
 
     /** Method 2
      * Method name: circleCircum
@@ -19,7 +21,7 @@ public class Main {
      * Method signature: circleCircum(int)
      * Returns the circumference of a circle. */
     public static double circleCircum(int radius) {
-        return 0;
+        return (Math.round(Math.PI * radius * 2 * 100)/100.00);
     }
 
     /** Method 3
@@ -33,7 +35,8 @@ public class Main {
      * Circumference: 18.85
      * Area: 28.27 */
     public static String circleInfo(int radius) {
-        return null;
+
+        return "Radius: " + radius + "\nCircumference: " + circleCircum(radius) + "\nArea: " + circleArea(radius);
     }
 
     /** Method 4
@@ -45,7 +48,10 @@ public class Main {
      * Format of returned String: e.g. 3 hours and 46 minutes */
     public static String minutesToHoursMinutes(int minutes) {
 
-        return null;
+        int hours = minutes/60;
+        int mins = minutes%60;
+
+        return hours + " hours and " + mins + " minutes";
     }
 
     /** Method 5
@@ -58,7 +64,10 @@ public class Main {
      * */
     public static String twentyFourToTwelve(String time) {
 
-        return null;
+        int hour = Integer.parseInt(time.substring(0,2)); // 15
+        int convertedHour = hour-12;
+        int minutes = Integer.parseInt(time.substring(3));
+        return (convertedHour + ":" + minutes + " pm") ;
 
     }
 
@@ -70,7 +79,8 @@ public class Main {
      * Returns the distance between two points */
     public static double distanceBetweenTwoPoints(int x1, int y1, int x2, int y2) {
 
-        return 0;
+        double distanceBetweenTwoPoints = Math.round(Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1))*100)/100.0;
+        return distanceBetweenTwoPoints;
 
     }
 
@@ -82,7 +92,7 @@ public class Main {
      * Returns the degrees celsius equivalent of the degrees in fahrenheit */
     public static double fahrenheitToCelsius(int fahrenheit) {
 
-        return 0;
+        return (Math.round (100 * (fahrenheit - 32.00) * (5.00/9.00)))/100.00;
 
     }
 
@@ -92,9 +102,9 @@ public class Main {
      * Method parameter: degrees celsius
      * Method signature: celsiusToFahrenheit(int)
      * Returns the degrees fahrenheit equivalent of the degrees in celsius */
-    public static double celsiusToFahrenheit(int celsius) {
+    public static double celsiusToFahrenheit(double celsius) {
 
-        return 0;
+       return (Math.round (100 * (celsius * (9.00/5.00) + 32.00)))/100.00;
 
     }
 
